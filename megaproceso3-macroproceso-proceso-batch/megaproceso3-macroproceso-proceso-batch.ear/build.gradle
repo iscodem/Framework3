@@ -1,0 +1,25 @@
+apply plugin: 'earApplicationConventions'
+
+evaluationDependsOn(':ejbmacroproceso-procesomdb')
+
+dependencies {
+	deploy project(':ejbmacroproceso-procesomdb')
+
+}
+
+import pe.gob.sunat.framework.build.ear.LibModule
+
+ear{
+	deploymentDescriptor {
+		module(new LibModule(project(":ejbmacroproceso-procesomdb").jar.archiveName), "ejb")
+	}
+}
+
+task copyEar(dependsOn: ear) << {
+    println "Copiar ear de ${libsDir.getPath()} hacia d:/ears"
+    copy{
+      from libsDir
+      into "d:/ears"
+      include '*.ear'
+    }
+  }

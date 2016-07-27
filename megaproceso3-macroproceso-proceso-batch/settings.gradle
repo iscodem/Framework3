@@ -1,0 +1,5 @@
+include 'ejbmacroproceso-procesomdb.jar',
+		'megaproceso3-macroproceso-proceso-batch.ear'
+
+project(':ejbmacroproceso-procesomdb.jar').name='ejbmacroproceso-procesomdb'
+project(':megaproceso3-macroproceso-proceso-batch.ear').name='megaproceso3-macroproceso-proceso-batch.ear'

@@ -1,0 +1,11 @@
+apply plugin: "jarConventions"
+
+
+dependencies{
+	providedCompile 'javax:javaee-api:7.0' 	
+	compile 'javax.activation:activation:1.1'
+	compile 'log4j:log4j:1.2.12'
+	compile project(':macroproceso-proceso-model')
+	compile project(':macroproceso-proceso-dao-ifz')
+	
+}
